@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10151f">
+    <meta name="description" content="An executive command center where an AI agent workforce optimizes live sponsorship inventory, fan activations and partner revenue in real time.">
+    <title>SponsorSense AI — Autonomous Sponsorship Revenue Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell" id="app">
+      <header class="site-header">
+        <div class="header-inner">
+          <a class="brand" href="#overview" aria-label="SponsorSense AI overview">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M16.2 7.8a6 6 0 0 1 0 8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2M7.8 16.2a6 6 0 0 1 0-8.4"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </span>
+            <span>
+              <span class="brand-name">SponsorSense AI</span>
+              <span class="brand-caption">Revenue Command Center</span>
+            </span>
+          </a>
+          <div class="header-actions">
+            <span class="agent-status"><span class="pulse-dot"></span>Agents <span id="header-mode">standby</span></span>
+            <button class="button button-outline" id="walkthrough-start">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="m10 8.7 5 3.3-5 3.3z"/></svg>
+              Start Executive Demo
+            </button>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-tab is-active" data-tab="overview" aria-current="page"><span>Overview</span><small>Executive summary</small></button>
+          <button class="nav-tab" data-tab="inventory"><span>Inventory Marketplace</span><small>Available inventory</small></button>
+          <button class="nav-tab" data-tab="agents"><span>Agent Workforce</span><small>AI agent activity</small></button>
+          <button class="nav-tab" data-tab="fan"><span>Fan Activation</span><small>Live fan journey</small></button>
+          <button class="nav-tab" data-tab="value"><span>Sponsor Value</span><small>Performance analytics</small></button>
+          <button class="nav-tab" data-tab="cloud"><span>Microsoft Cloud</span><small>Architecture</small></button>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="tab-panel is-visible" id="tab-overview" data-panel="overview">
+          <div class="overview-stack">
+            <section class="panel hero-panel">
+              <div class="hero-glow" aria-hidden="true"></div>
+              <div class="grid-overlay" aria-hidden="true"></div>
+              <div class="hero-content">
+                <div class="hero-copy">
+                  <p class="eyebrow live-eyebrow"><span class="pulse-dot"></span>Live · Event Night 42 · Scotiabank Arena</p>
+                  <h1><span class="text-gradient">SponsorSense AI</span></h1>
+                  <p class="hero-subtitle">Autonomous Sponsorship Revenue Optimization</p>
+                  <p class="hero-quote">“Maximizing partner value and venue revenue in real time.”</p>
+                </div>
+                <div class="run-control">
+                  <button class="button button-hero" id="run-optimization">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 1.2 6.4a2 2 0 0 0 1.6 1.6l6.4 1.2-6.4 1.2a2 2 0 0 0-1.6 1.6L12 20.4l-1.2-6.4a2 2 0 0 0-1.6-1.6L2.8 11.2l6.4-1.2a2 2 0 0 0 1.6-1.6z"/><path d="M19 2v4m2-2h-4"/></svg>
+                    <span>Run Sponsorship Optimization</span>
+                  </button>
+                  <div class="run-progress-card">
+                    <div class="progress-heading"><span>Agent run</span><span class="mono accent-text" id="progress-label">0%</span></div>
+                    <div class="progress-track" role="progressbar" aria-label="Agent run progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                      <span id="progress-bar"></span>
+                    </div>
+                    <p id="run-status">Workforce idle — awaiting authorization.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="metrics-grid" aria-label="Sponsorship performance metrics">
+              <article class="panel metric-card"><span class="metric-accent"></span><p>Sponsorship Revenue Tonight</p><div class="metric-value" id="metric-revenue">$3.10<span>M</span></div><small>Booked + realized activation revenue</small></article>
+              <article class="panel metric-card"><span class="metric-accent"></span><p>Unsold Inventory Opportunity</p><div class="metric-value" id="metric-inventory">$214K</div><small>Sellable assets still open tonight</small></article>
+              <article class="panel metric-card"><span class="metric-accent"></span><p>Active Sponsor Campaigns</p><div class="metric-value" id="metric-campaigns">32</div><small>Live across app, screens, POS</small></article>
+              <article class="panel metric-card"><span class="metric-accent"></span><p>Predicted Upside Revenue</p><div class="metric-value" id="metric-upside">$187K</div><small>Agent-modelled incremental yield</small></article>
+              <article class="panel metric-card"><span class="metric-accent"></span><p>Fan Engagement Score</p><div class="metric-value" id="metric-engagement">61<span class="metric-suffix">/100</span></div><small>Composite of dwell, taps, redemptions</small></article>
+              <article class="panel metric-card"><span class="metric-accent"></span><p>Campaign Performance Index</p><div class="metric-value" id="metric-performance">1.8<span class="metric-suffix">%</span></div><small>Sponsor engagement rate vs. impressions</small></article>
+            </section>
+
+            <section class="panel pipeline-panel">
+              <div class="section-kicker">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-2.5a2 2 0 0 0-1.9 1.5l-2.4 8.3a.25.25 0 0 1-.5 0L9.2 2.2a.25.25 0 0 0-.5 0l-2.3 8.3A2 2 0 0 1 4.5 12H2"/></svg>
+                Optimization pipeline
+              </div>
+              <div class="pipeline-grid" id="pipeline-grid">
+                <article class="pipeline-step"><span>01</span><h3>Sweeping inventory</h3><p>Inventory Agent scanning 1,284 sellable assets</p></article>
+                <article class="pipeline-step"><span>02</span><h3>Segmenting fans</h3><p>Audience Agent resolving live attendance signals</p></article>
+                <article class="pipeline-step"><span>03</span><h3>Designing activations</h3><p>Offer Agent composing sponsor concepts</p></article>
+                <article class="pipeline-step"><span>04</span><h3>Pricing yield</h3><p>Pricing Agent running dynamic valuation</p></article>
+                <article class="pipeline-step"><span>05</span><h3>Deploying campaigns</h3><p>Activation Agent pushing to app, screens, POS</p></article>
+                <article class="pipeline-step"><span>06</span><h3>Measuring outcomes</h3><p>Measurement Agent reconciling sponsor value</p></article>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="tab-inventory" data-panel="inventory" hidden>
+          <div class="page-heading">
+            <div><p class="eyebrow">Live event inventory</p><h1>Inventory Marketplace</h1><p>Find the right moment, placement and audience for every partner.</p></div>
+            <span class="live-chip"><span class="pulse-dot"></span>1,284 assets scanned</span>
+          </div>
+          <section class="metrics-grid inventory-stats" aria-label="Inventory summary">
+            <article class="panel metric-card"><p>Available opportunity</p><div class="metric-value">$214<span>K</span></div><small>Across unsold event-night inventory</small></article>
+            <article class="panel metric-card"><p>Sellable assets</p><div class="metric-value">1,284</div><small>Across 6 venue categories</small></article>
+            <article class="panel metric-card"><p>Avg. fan reach</p><div class="metric-value">48<span class="metric-suffix">K</span></div><small>Projected impressions per activation</small></article>
+          </section>
+          <section class="panel listing-panel">
+            <div class="listing-toolbar">
+              <div><h2>Available inventory</h2><p class="muted-copy">Agent-ranked placements with live pricing and estimated reach.</p></div>
+              <label class="select-wrap"><span class="sr-only">Filter inventory by category</span><select id="inventory-filter"><option value="all">All categories</option><option value="venue">Venue signage</option><option value="digital">Digital & app</option><option value="hospitality">Hospitality</option><option value="in-game">In-game</option></select></label>
+            </div>
+            <div class="inventory-grid" id="inventory-grid">
+              <article class="inventory-card" data-category="venue"><div class="asset-visual visual-bowl"><span>01 / VENUE SIGNAGE</span><b>LOWER BOWL</b><i>LED RIBBON · ROTATIONAL BOARDS</i></div><div class="asset-details"><div><h3>Lower Bowl</h3><p>LED ribbon · rotational boards</p></div><span class="demand-pill demand-high">High demand</span><div class="asset-meta"><span><small>Open value</small><b>$42,000</b></span><span><small>Fan impressions</small><b>48,000</b></span></div><button class="button button-small button-outline asset-activate">Activate placement <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></button></div></article>
+              <article class="inventory-card" data-category="hospitality"><div class="asset-visual visual-club"><span>02 / HOSPITALITY</span><b>PREMIUM CLUB</b><i>HOSPITALITY MOMENTS · BRANDED LOUNGES</i></div><div class="asset-details"><div><h3>Premium Club</h3><p>Hospitality moments · branded lounges</p></div><span class="demand-pill demand-medium">Opportunity</span><div class="asset-meta"><span><small>Open value</small><b>$56,000</b></span><span><small>Fan impressions</small><b>12,400</b></span></div><button class="button button-small button-outline asset-activate">Activate placement <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></button></div></article>
+              <article class="inventory-card" data-category="digital"><div class="asset-visual visual-app"><span>03 / DIGITAL & APP</span><b>FAN APP</b><i>IN-APP MOMENT · WALLET OFFER</i></div><div class="asset-details"><div><h3>Fan App</h3><p>In-app moment · wallet offer</p></div><span class="demand-pill demand-high">High demand</span><div class="asset-meta"><span><small>Open value</small><b>$38,000</b></span><span><small>Fan impressions</small><b>76,000</b></span></div><button class="button button-small button-outline asset-activate">Activate placement <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></button></div></article>
+              <article class="inventory-card" data-category="in-game"><div class="asset-visual visual-game"><span>04 / IN-GAME</span><b>JUMBOTRON</b><i>TIMEOUT FEATURE · PRESENTING PARTNER</i></div><div class="asset-details"><div><h3>Jumbotron Moment</h3><p>Timeout feature · presenting partner</p></div><span class="demand-pill demand-medium">Opportunity</span><div class="asset-meta"><span><small>Open value</small><b>$31,500</b></span><span><small>Fan impressions</small><b>19,800</b></span></div><button class="button button-small button-outline asset-activate">Activate placement <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></button></div></article>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-panel" id="tab-agents" data-panel="agents" hidden>
+          <div class="page-heading">
+            <div><p class="eyebrow">Autonomous operations</p><h1>Agent Workforce</h1><p>Six autonomous agents operating the sponsorship business in real time.</p></div>
+            <div class="workforce-summary"><span><small>Active</small><b id="active-agents">0/6</b></span><span><small>Mode</small><b class="mode-value">Standby</b></span></div>
+          </div>
+          <div class="agent-grid">
+            <article class="panel agent-card"><span class="agent-icon icon-blue">◌</span><div class="agent-card-heading"><h2>Inventory Agent</h2><span class="agent-state">Standby</span></div><p>Maps available assets, checks exclusivity and identifies open placements across every venue surface.</p><div class="agent-foot"><span>1,284 assets indexed</span><span class="mono">01</span></div></article>
+            <article class="panel agent-card"><span class="agent-icon icon-teal">◎</span><div class="agent-card-heading"><h2>Audience Agent</h2><span class="agent-state">Standby</span></div><p>Resolves attendance, dwell time and consented engagement signals into live audience segments.</p><div class="agent-foot"><span>18,420 signals resolved</span><span class="mono">02</span></div></article>
+            <article class="panel agent-card"><span class="agent-icon icon-violet">✳</span><div class="agent-card-heading"><h2>Offer Agent</h2><span class="agent-state">Standby</span></div><p>Creates contextual sponsor offers matched to fan intent, event moments and partner goals.</p><div class="agent-foot"><span>12 offer concepts ready</span><span class="mono">03</span></div></article>
+            <article class="panel agent-card"><span class="agent-icon icon-amber">⌁</span><div class="agent-card-heading"><h2>Pricing Agent</h2><span class="agent-state">Standby</span></div><p>Prices inventory dynamically using demand, reach, scarcity and real-time redemption signals.</p><div class="agent-foot"><span>Yield model synchronized</span><span class="mono">04</span></div></article>
+            <article class="panel agent-card"><span class="agent-icon icon-green">↗</span><div class="agent-card-heading"><h2>Activation Agent</h2><span class="agent-state">Standby</span></div><p>Deploys approved campaigns to venue screens, the fan app and point-of-sale channels.</p><div class="agent-foot"><span>3 delivery channels online</span><span class="mono">05</span></div></article>
+            <article class="panel agent-card"><span class="agent-icon icon-rose">⌗</span><div class="agent-card-heading"><h2>Measurement Agent</h2><span class="agent-state">Standby</span></div><p>Reconciles impressions, redemptions and partner value into clear, attributable reporting.</p><div class="agent-foot"><span>Reporting pipeline ready</span><span class="mono">06</span></div></article>
+          </div>
+          <section class="panel activity-panel"><div class="listing-toolbar"><div><h2>Agent activity</h2><p class="muted-copy">A transparent, real-time view of your AI workforce.</p></div><span class="live-chip"><span class="pulse-dot"></span><span id="activity-live-label">Awaiting authorization</span></span></div><div id="activity-feed" class="activity-feed"><div class="empty-activity"><span class="pulse-dot"></span>Agents are standing by for an optimization run.</div></div></section>
+        </section>
+
+        <section class="tab-panel" id="tab-fan" data-panel="fan" hidden>
+          <div class="page-heading">
+            <div><p class="eyebrow">Personalized, in-the-moment offers</p><h1>Fan Activation</h1><p>Turn live fan signals into timely, measurable sponsor experiences.</p></div>
+            <span class="live-chip"><span class="pulse-dot"></span>Event night · Live</span>
+          </div>
+          <div class="fan-layout">
+            <section class="panel fan-preview">
+              <div class="phone-shell">
+                <div class="phone-top"><span>9:41</span><span class="phone-signal">● ● ●</span></div>
+                <div class="phone-app-header"><span class="mini-brand-mark">S</span><span>Scotiabank Arena</span><span>•••</span></div>
+                <div class="game-banner"><span>GAME NIGHT · TORONTO</span><strong>YOUR NIGHT.<br>YOUR OFFER.</strong><small>Exclusive for fans in Section 118</small></div>
+                <div class="offer-card"><div class="offer-brand">TIM HORTONS <span>PARTNER OFFER</span></div><h2>Halftime combo,<br>on us.</h2><p>Enjoy a coffee &amp; snack combo at any concourse café.</p><div class="offer-price"><strong>$24.99</strong><span>fan reward value</span></div><div class="offer-location">⌖ &nbsp; Tim Hortons · Gate 3 Concourse</div><button class="button button-hero claim-offer" id="claim-offer">Claim Offer</button></div>
+                <div class="phone-nav"><span>⌂<small>Home</small></span><span>▦<small>Tickets</small></span><span class="phone-active">✳<small>Rewards</small></span><span>♙<small>Profile</small></span></div>
+              </div>
+              <div class="preview-note"><span class="pulse-dot"></span>Personalized fan app preview</div>
+            </section>
+            <div class="fan-details">
+              <section class="panel journey-panel"><h2>Live Fan Journey</h2><p class="muted-copy">One personalized activation, measured end to end across app, concession POS, and sponsor reporting.</p>
+                <ol class="journey-list"><li><span>01</span><p>Audience Agent detects a family group in Section 118 with 3+ concession scans.</p></li><li><span>02</span><p>Offer Agent matches the Tim Hortons halftime combo activation.</p></li><li><span>03</span><p>Pricing Agent sets dynamic redemption value at $24.99.</p></li><li><span>04</span><p>Activation Agent delivers the offer to the fan’s app and wallet.</p></li><li><span>05</span><p>Measurement Agent reconciles POS redemption to sponsor value in seconds.</p></li></ol>
+              </section>
+              <section class="panel segment-panel"><div class="section-kicker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m16 0v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/><circle cx="9" cy="7" r="4"/></svg>Audience snapshot</div><div class="segment-stats"><div><strong>Section 118</strong><small>Location</small></div><div><strong>Family group</strong><small>Live segment</small></div><div><strong>High intent</strong><small>Purchase signal</small></div></div><div class="segment-meter"><span style="width:78%"></span></div><div class="segment-score"><span>Activation match</span><b>78%</b></div></section>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="tab-value" data-panel="value" hidden>
+          <div class="page-heading">
+            <div><p class="eyebrow">Clear, measurable partner impact</p><h1>Sponsor Value</h1><p>See how live campaigns turn audience attention into value partners can prove.</p></div>
+            <span class="live-chip"><span class="pulse-dot"></span>Updated just now</span>
+          </div>
+          <section class="metrics-grid value-stats">
+            <article class="panel metric-card"><p>Partner value delivered</p><div class="metric-value">$3.10<span>M</span></div><small>Booked + realized event-night value</small></article>
+            <article class="panel metric-card"><p>Verified fan impressions</p><div class="metric-value">2.84<span class="metric-suffix">M</span></div><small>Across live sponsor activations</small></article>
+            <article class="panel metric-card"><p>Offer redemption rate</p><div class="metric-value">8.6<span class="metric-suffix">%</span></div><small>Up 2.1 points from event average</small></article>
+          </section>
+          <div class="value-layout">
+            <section class="panel chart-panel"><div class="listing-toolbar"><div><h2>Campaign engagement</h2><p class="muted-copy">Fan interactions across the last six event periods.</p></div><span class="chart-legend"><i></i>Engagement rate</span></div><div class="chart-area"><div class="chart-y-labels"><span>5%</span><span>4%</span><span>3%</span><span>2%</span><span>1%</span><span>0%</span></div><div class="chart-plot"><div class="chart-gridlines"><i></i><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 210" preserveAspectRatio="none" aria-label="Campaign engagement trend chart"><defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#43d4c1" stop-opacity=".24"/><stop offset="1" stop-color="#43d4c1" stop-opacity="0"/></linearGradient></defs><path d="M0 165 C50 160 75 136 130 145 S210 148 260 112 S340 130 385 97 S460 120 510 70 S610 78 700 30 L700 210 L0 210Z" fill="url(#chart-fill)"/><path d="M0 165 C50 160 75 136 130 145 S210 148 260 112 S340 130 385 97 S460 120 510 70 S610 78 700 30" fill="none" stroke="#52d8c6" stroke-width="3" vector-effect="non-scaling-stroke"/></svg><div class="chart-x-labels"><span>Game 37</span><span>Game 38</span><span>Game 39</span><span>Game 40</span><span>Game 41</span><span>Tonight</span></div></div></div></section>
+            <section class="panel value-partners"><h2>Top partner activations</h2><p class="muted-copy">Ranked by verified engagement value.</p><div class="partner-row"><span class="partner-logo partner-t">T</span><div><b>Tim Hortons</b><small>Fan app · Concourse POS</small></div><strong>$86.4K</strong><span class="partner-change">↑ 18%</span></div><div class="partner-row"><span class="partner-logo partner-s">S</span><div><b>Scotiabank</b><small>In-bowl · Premium club</small></div><strong>$72.1K</strong><span class="partner-change">↑ 12%</span></div><div class="partner-row"><span class="partner-logo partner-m">M</span><div><b>Microsoft</b><small>Digital · Fan app</small></div><strong>$54.8K</strong><span class="partner-change">↑ 9%</span></div><div class="partner-row"><span class="partner-logo partner-v">V</span><div><b>Visa</b><small>In-game · POS</small></div><strong>$41.2K</strong><span class="partner-change">↑ 7%</span></div></section>
+          </div>
+          <section class="panel sponsor-table-panel"><div class="listing-toolbar"><div><h2>Campaign performance</h2><p class="muted-copy">Live event-night results, reconciled across channels.</p></div><span class="live-chip"><span class="pulse-dot"></span>32 campaigns live</span></div><div class="table-scroll"><table><thead><tr><th>Campaign</th><th>Channel</th><th>Impressions</th><th>Engagement</th><th>Partner value</th><th>Status</th></tr></thead><tbody><tr><td>Tim Hortons Halftime Combo</td><td>App · POS</td><td>76,240</td><td>8.6%</td><td>$86,400</td><td><span class="table-status">● Live</span></td></tr><tr><td>Scotiabank Fan Cam</td><td>In-bowl</td><td>48,120</td><td>6.2%</td><td>$72,100</td><td><span class="table-status">● Live</span></td></tr><tr><td>Microsoft Cloud Moment</td><td>App · Screens</td><td>112,805</td><td>5.1%</td><td>$54,800</td><td><span class="table-status">● Live</span></td></tr></tbody></table></div></section>
+        </section>
+
+        <section class="tab-panel" id="tab-cloud" data-panel="cloud" hidden>
+          <div class="page-heading">
+            <div><p class="eyebrow">Secure. Connected. Event-ready.</p><h1>Microsoft Cloud</h1><p>A connected architecture for real-time sponsorship intelligence and activation.</p></div>
+            <span class="live-chip"><span class="pulse-dot"></span>All systems operational</span>
+          </div>
+          <div class="cloud-layout">
+            <section class="panel architecture-panel"><div class="grid-overlay" aria-hidden="true"></div><div class="architecture-content"><h2>Reference Architecture</h2><p class="muted-copy">SponsorSense runs entirely on the Microsoft Cloud.</p><div class="architecture-flow">
+              <article class="architecture-node"><span class="architecture-icon">⬡</span><div><h3>Microsoft Fabric</h3><p>Unified ticketing, CRM, POS, sponsorship and telemetry lakehouse.</p></div><span class="pulse-dot"></span></article><span class="flow-arrow">↓</span>
+              <article class="architecture-node"><span class="architecture-icon">✳</span><div><h3>Azure AI Foundry</h3><p>Agent orchestration, evaluation, grounding and safety guardrails.</p></div><span class="pulse-dot"></span></article><span class="flow-arrow">↓</span>
+              <article class="architecture-node"><span class="architecture-icon">⌁</span><div><h3>SponsorSense Agent Workforce</h3><p>Inventory · Audience · Offer · Pricing · Activation · Measurement.</p></div><span class="pulse-dot"></span></article><span class="flow-arrow">↓</span>
+              <article class="architecture-node"><span class="architecture-icon">◉</span><div><h3>Fan Engagement</h3><p>Venue app, wallet offers, Wi-Fi splash, concourse and in-bowl screens.</p></div><span class="pulse-dot"></span></article><span class="flow-arrow">↓</span>
+              <article class="architecture-node"><span class="architecture-icon">↗</span><div><h3>Partner Activations</h3><p>Sponsor campaigns deployed to POS, digital signage and app inventory.</p></div><span class="pulse-dot"></span></article><span class="flow-arrow">↓</span>
+              <article class="architecture-node"><span class="architecture-icon">▥</span><div><h3>Power BI Executive Reporting</h3><p>Revenue, sponsor value and renewal probability in near real time.</p></div><span class="pulse-dot"></span></article>
+            </div></div></section>
+            <div class="cloud-side"><section class="panel platform-panel"><h2>Platform Services</h2><div class="service-grid"><article><b>Microsoft Fabric</b><small>Data foundation &amp; OneLake</small></article><article><b>Azure AI Foundry</b><small>Agent runtime &amp; orchestration</small></article><article><b>Azure OpenAI</b><small>Reasoning, offers, briefings</small></article><article><b>Azure Functions</b><small>Event-driven activation delivery</small></article><article><b>Microsoft Entra ID</b><small>Identity &amp; partner access control</small></article><article><b>Power BI</b><small>Executive &amp; sponsor reporting</small></article></div></section>
+            <section class="panel governance-panel"><div class="section-kicker"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg>Governance</div><ul><li>Every agent action is logged, attributable and reversible.</li><li>Partner data isolated per sponsor tenant.</li><li>Fan activation follows consent and privacy controls.</li><li>Human approval remains in the loop for campaign launch.</li></ul></section></div>
+          </div>
+        </section>
+      </main>
+      <aside class="walkthrough-bar" id="walkthrough-bar" hidden aria-live="polite">
+        <div class="walkthrough-inner"><div class="walkthrough-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 1.4 7.6L21 11l-7.6 1.4L12 20l-1.4-7.6L3 11l7.6-1.4z"/></svg></div><div class="walkthrough-copy"><p class="eyebrow">Executive Walkthrough · Step <span id="walkthrough-count">1</span> of 6</p><h2 id="walkthrough-title">Revenue, at a glance</h2><p id="walkthrough-body">A single live view of sponsorship revenue, available inventory, active campaigns and fan engagement.</p></div><div class="walkthrough-controls"><button class="button button-quiet" id="walkthrough-prev" aria-label="Previous step" disabled>‹</button><button class="button button-small button-hero" id="walkthrough-next">Next <span aria-hidden="true">›</span></button><button class="button button-quiet close-walkthrough" id="walkthrough-close" aria-label="Exit walkthrough">×</button></div><div class="walkthrough-progress" id="walkthrough-progress"><span class="is-complete"></span><span></span><span></span><span></span><span></span><span></span></div></div>
+      </aside>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+  </body>
+</html>
